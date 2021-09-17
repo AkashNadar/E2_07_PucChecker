@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="411dp"
+        android:layout_height="78dp" />
+
+    <ImageView
+        android:id="@+id/avatarImage"
+        android:layout_width="155dp"
+        android:layout_height="161dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:src="@drawable/police"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="DocChecker"
+        android:textColor="#634D72"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="33dp" />
+
+    <Button
+        android:id="@+id/SignInButton"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#634D72"
+        android:text="Sign In"
+        android:textColor="@android:color/background_light"
+        android:onClick="UserSignIn"/>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="31dp" />
+
+    <Button
+        android:id="@+id/SignUpButton"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#9AA4DA"
+        android:text="Sign Up"
+        android:textColor="@android:color/background_light"
+        android:onClick="UserSignUp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+
+
+
+</LinearLayout>
