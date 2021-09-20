@@ -1,8 +1,6 @@
 package com.example.clgproject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,9 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class ActivitySignIn extends AppCompatActivity {
+public class ActivitySignIn extends ActivitySignUp {
 
     private static final String TAG = "SignIn";
 
@@ -37,6 +33,8 @@ public class ActivitySignIn extends AppCompatActivity {
     public void SignIn(View view) {
         String name = uname.getText().toString();
         String key = upass.getText().toString();
+        Intent publicUser = new Intent(ActivitySignIn.this, ActivityPublicUser.class);
+        Intent policeUser = new Intent(ActivitySignIn.this, ActivityPoliceUser.class);
 
         //Checking the Internet Connection
         if(!isConnected(this)){
@@ -44,9 +42,18 @@ public class ActivitySignIn extends AppCompatActivity {
             showCustomDialog();
         }
         else if (name.equals("Akash") && key.equals("1234")){
-            Intent PublicUser = new Intent(ActivitySignIn.this, Docpage.class);
-            startActivity(PublicUser);
-            Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
+            if (radioText == "Public"){
+
+                startActivity(publicUser);
+                Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                startActivity(policeUser);
+                Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
+            }
+
+
         }
         else if (name.equals("Akash") || key.equals("1234")){
             Toast.makeText(getBaseContext(),"Wrong Username or Password",Toast.LENGTH_SHORT).show();

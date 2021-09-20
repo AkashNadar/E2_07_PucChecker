@@ -15,12 +15,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ActivitySignUp extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
-
+//    String radioText = checkButton();
+    String radioText = "Police";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,12 @@ public class ActivitySignUp extends AppCompatActivity {
         radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
     }
 
-    public void page(View view) {
-        int selectedID = radioGroup.getCheckedRadioButtonId();
-        radioButton = (RadioButton) findViewById(selectedID);
-        String radioText = radioButton.getText().toString();
+    // RadioButton text
 
+    public String checkButton() {
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findViewById(radioId);
+        return radioButton.getText().toString();
 
     }
 
@@ -51,6 +54,7 @@ public class ActivitySignUp extends AppCompatActivity {
             showCustomDialog();
         }
         else {
+
             Intent signin = new Intent(ActivitySignUp.this, ActivitySignIn.class);
             startActivity(signin);
             Toast.makeText(getBaseContext(),"SignUp completed Please login",Toast.LENGTH_SHORT).show();
