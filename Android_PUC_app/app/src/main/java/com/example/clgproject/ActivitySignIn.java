@@ -33,6 +33,7 @@ public class ActivitySignIn extends ActivitySignUp {
     public void SignIn(View view) {
         String name = uname.getText().toString();
         String key = upass.getText().toString();
+//        String radioText = checkButton();
         Intent publicUser = new Intent(ActivitySignIn.this, ActivityPublicUser.class);
         Intent policeUser = new Intent(ActivitySignIn.this, ActivityPoliceUser.class);
 

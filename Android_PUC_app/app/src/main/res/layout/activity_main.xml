@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="DocChecker"
+        android:text="PucChecker"
         android:textColor="#634D72"
         android:textSize="36dp"
         android:textStyle="bold"
