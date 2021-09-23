@@ -22,7 +22,7 @@ public class ActivitySignUp extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
 //    String radioText = checkButton();
-    String radioText = "Public";
+    String radioText = "Police";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,105 +4,120 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Space
-        android:id="@+id/space"
-        android:layout_width="411dp"
-        android:layout_height="10dp" />
-
-    <ImageView
-        android:layout_width="106dp"
-        android:layout_height="104dp"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:src="@drawable/police"/>
-
-    <Space
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        android:orientation="vertical">
-
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Space
+                android:id="@+id/space"
+                android:layout_width="411dp"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:id="@+id/uname"
-            android:layout_width="264dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="(Please enter a username)"
-            android:singleLine="true" />
+            <ImageView
+                android:layout_width="106dp"
+                android:layout_height="104dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:src="@drawable/police"/>
 
-        <TextView
-            android:id="@+id/usernameTextField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Username"
-            android:textColor="#000000" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="38dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/upass"
-            android:layout_width="264dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="(Please enter a password)"
-            android:inputType="textPassword"
-            android:imeOptions="actionDone"
-            android:singleLine="true" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
 
-        <TextView
-            android:id="@+id/passwordText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-smallcaps"
-            android:gravity="center"
-            android:text="Password"
-            android:textColor="#000000" />
+                <EditText
+                    android:id="@+id/uname"
+                    android:layout_width="264dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="(Please enter a username)"
+                    android:singleLine="true" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/usernameTextField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Username"
+                    android:textColor="#000000" />
 
-    <Button
-        android:id="@+id/signInButton"
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#634D72"
-        android:text="Sign in"
-        android:textColor="#FFFF"
-        android:onClick="SignIn"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp" />
+
+                <EditText
+                    android:id="@+id/upass"
+                    android:layout_width="264dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="(Please enter a password)"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/passwordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:text="Password"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="23dp" />
+
+            <Button
+                android:id="@+id/signInButton"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#634D72"
+                android:text="Sign in"
+                android:textColor="#FFFF"
+                android:onClick="SignIn"/>
 
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="23dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="23dp" />
 
-    <Button
-        android:id="@+id/BackButton"
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#9AA4DA"
-        android:text="Main Menu"
-        android:textColor="#FFFF"
-        android:onClick="LogInBack"/>
+            <Button
+                android:id="@+id/BackButton"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#9AA4DA"
+                android:text="Main Menu"
+                android:textColor="#FFFF"
+                android:onClick="LogInBack"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="56dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="56dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

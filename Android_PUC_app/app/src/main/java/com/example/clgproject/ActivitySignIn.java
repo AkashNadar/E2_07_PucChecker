@@ -16,9 +16,9 @@ import android.widget.Toast;
 
 public class ActivitySignIn extends ActivitySignUp {
 
-    private static final String TAG = "SignIn";
+//    private static final String TAG = "SignIn";
 
-    EditText uname,upass;
+    EditText uname, upass;
     Button clk;
 
     @Override
@@ -39,20 +39,19 @@ public class ActivitySignIn extends ActivitySignUp {
 
         //Checking the Internet Connection
         if(!isConnected(this)){
-            Log.d(TAG, "isConnected: "+ isConnected(this));
+//            Log.d(TAG, "isConnected: "+ isConnected(this));
             showCustomDialog();
         }
         else if (name.equals("Akash") && key.equals("1234")){
             if (radioText == "Public"){
 
                 startActivity(publicUser);
-                Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
             }
             else{
 
                 startActivity(policeUser);
-                Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
             }
+            Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
 
 
         }

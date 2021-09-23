@@ -46,20 +46,48 @@
         android:layout_gravity="center"
         android:backgroundTint="#634D72"
         android:textColor="#FFF"
-        android:text="Scan No-Plate"/>
+        android:text="Scan No-Plate"
+        android:onClick="clickPlate"/>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="23dp"
         android:layout_weight="0." />
 
-    <Button
-        android:layout_width="216dp"
+    <ImageView
+        android:id="@+id/imageId"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_weight="0." />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#9AA4DA"
-        android:textColor="#FFF"
-        android:text="Sign Out"/>
+        android:textSize="40dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="216dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#9AA4DA"
+            android:textColor="#FFF"
+            android:text="Sign Out"
+            android:layout_alignParentBottom="true"/>
+
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

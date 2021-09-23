@@ -42,6 +42,7 @@
         android:textColor="@android:color/black"
         app:fontFamily="sans-serif-light" />
     <Button
+        android:id="@+id/addProfileId"
         android:layout_width="216dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -49,24 +50,34 @@
         android:textColor="#FFF"
         android:text="Add Profile"/>
 
-    <LinearLayout
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
+        android:layout_height="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="EMPTY"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="EMPTY" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
         <Button
+            android:id="@+id/signOutId"
             android:layout_width="216dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

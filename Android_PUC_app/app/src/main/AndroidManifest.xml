@@ -3,6 +3,7 @@
     package="com.example.clgproject">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClgProject">
-        <activity android:name=".ActivityPoliceUser"></activity>
+        <activity android:name=".ActivityProfile"></activity>
+        <activity android:name=".ActivityPoliceUser" />
 
         <receiver
             android:name=".MyReceiver"
