@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">clgProject</string>
+    <string name="invalid_name">"Please Enter Valid Name "</string>
+    <string name="invalid_mobileNo">Please Enter a Valid Mobile Number</string>
+    <string name="invalid_email">Enter a Valid Email</string>
+    <string name="invalid_password">Enter mimimum six digit password</string>
+    <string name="invalid_confirm_password">Password does not match</string>
 </resources>

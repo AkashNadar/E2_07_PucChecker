@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "56623282220",
+    "project_id": "clgproject-69114",
+    "storage_bucket": "clgproject-69114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56623282220:android:a513ed73b27039cfe17989",
+        "android_client_info": {
+          "package_name": "com.example.clgproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56623282220-cpngcjtbqhcn61oin2pim66tf0i5bmge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdak6Ywf7Nd6Ml-WCy_c-KlTzSLsxSh9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56623282220-cpngcjtbqhcn61oin2pim66tf0i5bmge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

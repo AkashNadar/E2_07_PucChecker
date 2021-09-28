@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class ActivityPoliceUser extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     Bitmap image;
+    Button signOut;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -42,6 +44,14 @@ public class ActivityPoliceUser extends AppCompatActivity {
         setContentView(R.layout.activity_police_user);
         imageView = findViewById(R.id.imageId);
         textView = findViewById(R.id.textView);
+        signOut = findViewById(R.id.signOutPolice);
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main = new Intent(ActivityPoliceUser.this, MainActivity.class);
+                startActivity(main);
+            }
+        });
 
 
     }
