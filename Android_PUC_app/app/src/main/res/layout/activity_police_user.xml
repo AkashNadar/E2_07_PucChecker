@@ -12,83 +12,110 @@
         android:layout_width="411dp"
         android:layout_height="30dp" />
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:gravity="center"
-        android:text="Welcome User"
-        android:textColor="@android:color/black"
-        android:textSize="26sp"
-        app:fontFamily="sans-serif-smallcaps" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="106dp"
-        android:layout_height="104dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/policeuser" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:gravity="center"
+                android:text="Welcome User"
+                android:textColor="@android:color/black"
+                android:textSize="26sp"
+                app:fontFamily="sans-serif-smallcaps" />
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:gravity="center"
-        android:text="Welcome , you are logged in as an PoliceUser."
-        android:textColor="@android:color/black"
-        app:fontFamily="sans-serif-light" />
-    <Button
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#634D72"
-        android:textColor="#FFF"
-        android:text="Scan No-Plate"
-        android:onClick="clickPlate"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="106dp"
+                android:layout_height="104dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/policeuser" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_weight="0." />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
-    <ImageView
-        android:id="@+id/imageId"
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
-        android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:text="Welcome , you are logged in as an PoliceUser."
+                android:textColor="@android:color/black"
+                app:fontFamily="sans-serif-light" />
+            <Button
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#634D72"
+                android:textColor="#FFF"
+                android:text="Scan No-Plate"
+                android:onClick="clickPlate"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_weight="0." />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_weight="0." />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40dp"/>
+            <Button
+                android:id="@+id/imageTOText"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#9AA4DA"
+                android:textColor="#FFF"
+                android:text="Detect Text"
+                />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/imageId"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_gravity="center"/>
 
-        <Button
-            android:id="@+id/signOutPolice"
-            android:layout_width="216dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="#9AA4DA"
-            android:textColor="#FFF"
-            android:text="Sign Out"
-            android:layout_alignParentBottom="true"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:layout_weight="0." />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="40dp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
 
 
-    </RelativeLayout>
 
+
+
+                <Button
+                    android:id="@+id/signOutPolice"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#9AA4DA"
+                    android:textColor="#FFF"
+                    android:text="Sign Out"
+                    android:layout_alignParentBottom="true"/>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

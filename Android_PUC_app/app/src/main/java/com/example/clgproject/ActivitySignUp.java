@@ -1,5 +1,6 @@
 package com.example.clgproject;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,15 +19,23 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -38,12 +47,12 @@ public class ActivitySignUp extends AppCompatActivity {
 
     RadioGroup radioGroup;
     RadioButton radioButton;
-//    String radioText = checkButton();
-    String radioText = "Public";
 
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Users");
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
 
+//    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+//    private DatabaseReference root = db.getReference().child("PublicUser");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +64,9 @@ public class ActivitySignUp extends AppCompatActivity {
         email = findViewById(R.id.emailEt);
         pass = findViewById(R.id.passEt);
         conf_pass = findViewById(R.id.confPassEt);
-        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+//        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
 
     }
@@ -71,7 +82,7 @@ public class ActivitySignUp extends AppCompatActivity {
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         String passVal = pass.getText().toString().trim();
         String confPassVal = conf_pass.getText().toString().trim();
-        String radioText = checkButton();
+//        String radioText = checkButton();
 
 
         if(nameVal.isEmpty()){
@@ -114,28 +125,79 @@ public class ActivitySignUp extends AppCompatActivity {
         }
 
         //FireBase
+        PublicUserDB publicUserDB = new PublicUserDB(nameVal, phnoVal, emailVal, passVal);
+        FirebaseDatabase.getInstance().getReference("PublicUser").child(phnoVal).setValue(publicUserDB).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<Void> task) {
+                if(task.isSuccessful()){
 
-        HashMap<String, String> userMap = new HashMap<>();
 
-        userMap.put("Name", nameVal);
-        userMap.put("Ph_no", phnoVal);
-        userMap.put("Email", emailVal);
-        userMap.put("Password", passVal);
-        userMap.put("Radio", radioText);
+                    //redirect to signin layout
+                    Intent signIn = new Intent(ActivitySignUp.this, ActivitySignIn.class);
+                    startActivity(signIn);
 
-        root.push().setValue(userMap);
+                }else{
+                    Toast.makeText(ActivitySignUp.this, "Failed to Register, Try Again!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+
+        //FireBase
+//        mAuth.createUserWithEmailAndPassword(emailVal, passVal)
+//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+//                        if(task.isSuccessful()){
+//                            PublicUserDB user = new PublicUserDB(nameVal,phnoVal,emailVal,passVal);
+//
+//                            FirebaseDatabase.getInstance().getReference("PublicUser")
+//                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+//                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull @NotNull Task<Void> task) {
+//                                    if(task.isSuccessful()){
+//
+//
+//                                        //redirect to signin layout
+//                                        Intent signIn = new Intent(ActivitySignUp.this, ActivitySignIn.class);
+//                                        startActivity(signIn);
+//
+//                                    }else{
+//                                        Toast.makeText(ActivitySignUp.this, "Failed to Register, Try Again!", Toast.LENGTH_LONG).show();
+//                                    }
+//                                }
+//                            });
+//                        }else {
+//                            Toast.makeText(ActivitySignUp.this, "Failed to Register, Try Again!", Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                });
+
+//        HashMap<String, String> userMap = new HashMap<>();
+//
+//        userMap.put("Name", nameVal);
+//        userMap.put("Ph_no", phnoVal);
+//        userMap.put("Email", emailVal);
+//        userMap.put("Password", passVal);
+//        userMap.put("Radio", radioText);
+//
+//        root.push().setValue(userMap);
+
+
         return true;
     }
 
 
     // RadioButton text
 
-    public String checkButton() {
-        int radioId = radioGroup.getCheckedRadioButtonId();
-        radioButton = (RadioButton) findViewById(radioId);
-        return radioButton.getText().toString();
-
-    }
+//    public String checkButton() {
+//        int radioId = radioGroup.getCheckedRadioButtonId();
+//        radioButton = (RadioButton) findViewById(radioId);
+//        return radioButton.getText().toString();
+//
+//    }
 
     public void SignUpBack(View view) {
         Intent back = new Intent(ActivitySignUp.this, MainActivity.class);
@@ -153,9 +215,7 @@ public class ActivitySignUp extends AppCompatActivity {
         else {
             
             if (CheckAllFields()){
-                Intent signIn = new Intent(ActivitySignUp.this, ActivitySignIn.class);
-                startActivity(signIn);
-                Toast.makeText(getBaseContext(),"SignUp completed Please login",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivitySignUp.this, "User have been Registered Sucessfully!", Toast.LENGTH_LONG).show();
             }
             else
                 Toast.makeText(this, "Invalid Inputs", Toast.LENGTH_SHORT).show();

@@ -45,7 +45,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:ems="10"
-                    android:hint="(Please enter your email-id)"
+                    android:hint="(Please enter your Phone-No)"
                     android:singleLine="true" />
 
                 <TextView
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-smallcaps"
-                    android:text="Email-ID"
+                    android:text="Phone-No"
                     android:textColor="#000000" />
 
                 <Space

@@ -32,7 +32,7 @@
                 android:layout_height="20dp" />
 
             <EditText
-                android:id="@+id/nameEt"
+                android:id="@+id/pName"
                 android:layout_width="268dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
@@ -55,7 +55,7 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/mobileNumber"
+                android:id="@+id/pNumber"
                 android:layout_width="268dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
@@ -78,7 +78,7 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/emailEt"
+                android:id="@+id/pEmailid"
                 android:layout_width="264dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -99,12 +99,34 @@
                 android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/passEt"
+                android:id="@+id/policeIdView"
+                android:layout_width="264dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:hint="(Please enter Police-Id)"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/policeIdText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="Police ID"
+                android:textColor="#000000" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/pPass"
                 android:layout_width="264dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:imeOptions="actionDone"
-                android:hint="(Please enter a password)"
+                android:hint="(Enter a password)"
                 android:inputType="textPassword"
                 android:singleLine="true" />
 
@@ -118,68 +140,10 @@
                 android:text="Password"
                 android:textColor="#000000" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/confPassEt"
-                android:layout_width="264dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:imeOptions="actionDone"
-                android:hint="(Please enter confirmpassword)"
-                android:inputType="textPassword"
-                android:singleLine="true" />
-
-            <TextView
-                android:id="@+id/confirmPasswordText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:text="Confirmpassword"
-                android:textColor="#000000" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-<!--            <RadioGroup-->
-<!--                android:id="@+id/radiogroup"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--                <RadioButton-->
-<!--                    android:id="@+id/Public"-->
-<!--                    android:layout_width="172dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:checked="true"-->
-<!--                    android:fontFamily="sans-serif"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="Public"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:typeface="sans" />-->
-
-<!--                <RadioButton-->
-<!--                    android:id="@+id/Police"-->
-<!--                    android:layout_width="173dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:fontFamily="sans-serif"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="Police"-->
-<!--                    android:textSize="18sp" />-->
-
-<!--            </RadioGroup>-->
-
-
-
-<!--            <Space-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="10dp" />-->
 
             <Button
                 android:id="@+id/createButton"
@@ -187,9 +151,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#634D72"
-                android:text="SignUp"
+                android:text="Create Account "
                 android:textColor="#FFF"
-                android:onClick="SignUp"/>
+                android:onClick="Create"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -202,9 +166,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#9AA4DA"
-                android:text="Main Menu"
+                android:text="Back"
                 android:textColor="#FFF"
-                android:onClick="SignUpBack"/>
+                android:onClick="Back"/>
 
         </LinearLayout>
 

@@ -25,6 +25,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.ml.vision.FirebaseVision;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.ml.vision.text.FirebaseVisionText;
+import com.google.firebase.ml.vision.text.FirebaseVisionTextDetector;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 
 public class ActivityPoliceUser extends AppCompatActivity {
@@ -34,7 +46,7 @@ public class ActivityPoliceUser extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     Bitmap image;
-    Button signOut;
+    Button signOut, detect;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -48,13 +60,23 @@ public class ActivityPoliceUser extends AppCompatActivity {
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
                 Intent main = new Intent(ActivityPoliceUser.this, MainActivity.class);
                 startActivity(main);
             }
         });
 
+        detect = findViewById(R.id.imageTOText);
+        detect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                detectTextFromImage();
+            }
+        });
 
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void clickPlate(View view) {
@@ -77,6 +99,7 @@ public class ActivityPoliceUser extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, CAMERA_PER_CODE);
         }else
             openCamera();
+            textView.setText("");
     }
 
 
@@ -115,6 +138,45 @@ public class ActivityPoliceUser extends AppCompatActivity {
         }
     }
 
+    private void detectTextFromImage() {
 
+        if(imageView.getDrawable() == null){
+            Toast.makeText(this, "No image found to detect", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+            FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(image);
+            FirebaseVisionTextDetector firebaseVisionTextDetector = FirebaseVision.getInstance().getVisionTextDetector();
+            firebaseVisionTextDetector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+                @Override
+                public void onSuccess(FirebaseVisionText firebaseVisionText) {
+                    displayTextFromImage(firebaseVisionText);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull @NotNull Exception e) {
+                    Toast.makeText(ActivityPoliceUser.this, "Error" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+
+
+
+
+    }
+
+    private void displayTextFromImage(FirebaseVisionText firebaseVisionText) {
+
+        List<FirebaseVisionText.Block> blockList = firebaseVisionText.getBlocks();
+        if (blockList.size() == 0){
+            Toast.makeText(this, "No Text Found In The Image", Toast.LENGTH_SHORT).show();
+        }else {
+            for(FirebaseVisionText.Block block : firebaseVisionText.getBlocks()){
+                String text = block.getText();
+                textView.setText(text);
+            }
+        }
+    }
 
 }
