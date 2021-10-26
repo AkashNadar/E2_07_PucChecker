@@ -12,11 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClgProject">
-        <activity android:name=".ActivityPoliceSignUp"></activity>
+        <activity android:name=".ActivityDisplayImage"></activity>
+        <activity android:name=".ActivityDisplay" />
+        <activity android:name=".ActivityPoliceSignUp" />
         <activity android:name=".ActivityAdmin" />
         <activity android:name=".ActivityPoliceSignIn" />
         <activity android:name=".ActivityProfile" />
-        <activity android:name=".ActivityPoliceUser" >
+        <activity android:name=".ActivityPoliceUser">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
                 android:value="ocr" />

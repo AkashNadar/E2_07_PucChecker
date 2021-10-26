@@ -143,10 +143,13 @@ public class ActivitySignIn extends AppCompatActivity {
                         uEmail.setError(null);
 
                         String passFromDB = snapshot.child(mail).child("pass").getValue(String.class);
+                        String phoneNoFromDB = snapshot.child(mail).child("phoneNo").getValue(String.class);
 
                         if(passFromDB.equals(key)){
 
                             Intent intent = new Intent(ActivitySignIn.this, ActivityPublicUser.class);
+                            Intent intentProfile = new Intent(ActivitySignIn.this, ActivityProfile.class);
+                            intent.putExtra("phno", phoneNoFromDB);
                             startActivity(intent);
                             Toast.makeText(ActivitySignIn.this, "SignIn Successful", Toast.LENGTH_SHORT).show();
                         }else {

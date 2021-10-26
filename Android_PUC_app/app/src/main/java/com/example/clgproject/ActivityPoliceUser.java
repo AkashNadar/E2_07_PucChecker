@@ -74,6 +74,16 @@ public class ActivityPoliceUser extends AppCompatActivity {
             }
         });
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent display = new Intent(ActivityPoliceUser.this, ActivityDisplayImage.class);
+
+                display.putExtra("noPlate", textView.getText().toString());
+                startActivity(display);
+            }
+        });
+
     }
 
 
