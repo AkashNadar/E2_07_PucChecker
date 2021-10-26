@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ public class ActivityPublicUser extends AppCompatActivity {
     DBCarProfile DB;
     ArrayList<String> listitem;
     ArrayAdapter adapter;
+    TextView map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,16 @@ public class ActivityPublicUser extends AppCompatActivity {
         listitem = new ArrayList<>();
         userlist = findViewById(R.id.disp);
         DB = new DBCarProfile(this);
+
+        map = findViewById(R.id.map);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mapInt = new Intent(ActivityPublicUser.this, ActivityMap.class);
+                Toast.makeText(ActivityPublicUser.this, "Getting Locations", Toast.LENGTH_SHORT).show();
+                startActivity(mapInt);
+            }
+        });
 
         viewdata();
 

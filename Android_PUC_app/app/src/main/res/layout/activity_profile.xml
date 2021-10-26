@@ -116,18 +116,7 @@
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
 
-            <Button
-                android:id="@+id/download"
-                android:layout_width="216dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="#634D72"
-                android:textColor="#FFF"
-                android:text="Download certificate"/>
 
             <Space
                 android:layout_width="match_parent"

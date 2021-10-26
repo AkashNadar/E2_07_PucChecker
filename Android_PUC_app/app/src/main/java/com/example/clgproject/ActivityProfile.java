@@ -38,7 +38,7 @@ public class ActivityProfile extends AppCompatActivity {
         image = findViewById(R.id.pucImage);
         choose = findViewById(R.id.upload);
         addProfile = findViewById(R.id.addProfileId2);
-        certificate = findViewById(R.id.download);
+//        certificate = findViewById(R.id.download);
 
         DB = new DBCarProfile(this);
 

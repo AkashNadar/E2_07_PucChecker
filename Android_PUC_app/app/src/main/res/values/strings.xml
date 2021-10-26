@@ -5,4 +5,5 @@
     <string name="invalid_email">Enter a Valid Email</string>
     <string name="invalid_password">Enter mimimum six digit password</string>
     <string name="invalid_confirm_password">Password does not match</string>
+    <string name="google_map_key">AIzaSyAAycAyeSWpw8Yw43s0Eb8lvlR12xzW3Ks</string>
 </resources>

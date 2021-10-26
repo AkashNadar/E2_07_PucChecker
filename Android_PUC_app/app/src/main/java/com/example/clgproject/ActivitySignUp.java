@@ -96,30 +96,30 @@ public class ActivitySignUp extends AppCompatActivity {
             return false;
         }
 
-        Query checkUser = reference.orderByChild("phoneNo").equalTo(phnoVal);
-
-
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-
-                    existCheck = false;
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        });
-        if (existCheck == false){
-            mb_no.setError("Phone no already Exists!");
-            existCheck = true;
-            return false;
-
-        }
+//        Query checkUser = reference.orderByChild("phoneNo").equalTo(phnoVal);
+//
+//
+//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+//                if (snapshot.exists()){
+//
+//                    existCheck = false;
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+//
+//            }
+//        });
+//        if (existCheck == false){
+//            mb_no.setError("Phone no already Exists!");
+//            existCheck = true;
+//            return false;
+//
+//        }
 
 
         if(emailVal.isEmpty()){
