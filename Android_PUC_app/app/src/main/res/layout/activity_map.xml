@@ -23,7 +23,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt_find"
-            android:text="Find"/>
+            android:text="Find"
+            android:backgroundTint="#634D72"
+            android:textColor="#FFF"/>
 
     </LinearLayout>
 

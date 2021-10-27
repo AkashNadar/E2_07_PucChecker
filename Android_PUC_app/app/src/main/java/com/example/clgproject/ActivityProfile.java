@@ -96,14 +96,14 @@ public class ActivityProfile extends AppCompatActivity {
             }
         });
 
-        certificate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://vahan.parivahan.gov.in/puc/views/PucCertificate.xhtml";
-                Intent cert = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(cert);
-            }
-        });
+//        certificate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String url = "https://vahan.parivahan.gov.in/puc/views/PucCertificate.xhtml";
+//                Intent cert = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//                startActivity(cert);
+//            }
+//        });
     }
 
     //    Camera
