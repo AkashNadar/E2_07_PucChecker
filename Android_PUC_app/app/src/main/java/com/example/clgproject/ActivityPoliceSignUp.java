@@ -76,6 +76,11 @@ public class ActivityPoliceSignUp extends AppCompatActivity {
             return false;
         }
 
+        if (policeIdVal.isEmpty()) {
+            policeId.setError("Field cannot be empty");
+            return false;
+        }
+
         if (passVal.isEmpty()) {
             pass.setError("Password cannot be empty");
             return false;
@@ -85,10 +90,7 @@ public class ActivityPoliceSignUp extends AppCompatActivity {
 
         }
 
-        if (policeIdVal.isEmpty()) {
-            policeId.setError("Field cannot be empty");
-            return false;
-        }
+
 
         PoliceUserDB policeUserDB = new PoliceUserDB(nameVal,phnoVal,emailVal,policeIdVal,passVal);
         FirebaseDatabase.getInstance().getReference("PoliceUser").child(phnoVal).setValue(policeUserDB).addOnCompleteListener(new OnCompleteListener<Void>() {

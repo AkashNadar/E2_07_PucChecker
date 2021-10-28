@@ -109,7 +109,7 @@ public class ActivitySignIn extends AppCompatActivity {
         else{
 
             if(mail.isEmpty()){
-            uEmail.setError("Email is Required!");
+            uEmail.setError("Phone No is Required!");
             uEmail.requestFocus();
             return;
             }

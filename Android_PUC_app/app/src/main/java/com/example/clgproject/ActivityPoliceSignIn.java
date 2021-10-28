@@ -131,7 +131,7 @@ public class ActivityPoliceSignIn extends AppCompatActivity {
         String key = uPass.getText().toString().trim();
 
         if(mail.isEmpty()){
-            uEmail.setError("Email is Required!");
+            uEmail.setError("PhoneNo is Required!");
             uEmail.requestFocus();
             return;
         }
